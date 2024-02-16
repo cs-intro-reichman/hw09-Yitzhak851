@@ -1,0 +1,54 @@
+## DONT DELETE THIS FILE and DONT CHANGE THIS FILE
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Development
+.idea/
+.gradle/
+build/
+
+# External dependencies
+/bin/
+/target/
+/.classpath
+/.project
+/.settings/
+/*.iml
+
+# Eclipse-specific
+*.pydevproject
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.springBeans
+
+# NetBeans-specific
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# IntelliJ-specific
+/out/
+/*.ipr
+/*.iws
+/.idea/
+/*.iml
+/*.log

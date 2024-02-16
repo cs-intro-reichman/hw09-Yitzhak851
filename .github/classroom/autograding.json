@@ -1,0 +1,107 @@
+{
+  "tests": [
+    {
+      "name": "Test addFirst Method",
+      "setup": "javac ListTester.java",
+      "run": "java ListTester addFirst",
+      "input": "",
+      "output": "Test addFirst result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Test toString Method",
+      "setup": "javac ListTester.java",
+      "run": "java ListTester toString",
+      "input": "",
+      "output": "Test toString result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Test indexOf Method",
+      "setup": "javac ListTester.java",
+      "run": "java ListTester indexOf",
+      "input": "",
+      "output": "Test indexOf result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Test Get Method",
+      "setup": "javac ListTester.java",
+      "run": "java ListTester get",
+      "input": "",
+      "output": "Test get result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 5
+    },
+    {
+      "name": "Test Remove Method",
+      "setup": "javac ListTester.java",
+      "run": "java ListTester remove",
+      "input": "",
+      "output": "Test remove result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Test Update Method",
+      "setup": "javac ListTester.java",
+      "run": "java ListTester update",
+      "input": "",
+      "output": "Test update result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Test Calculate Probabilities Method",
+      "setup": "javac LanguageModelTester.java",
+      "run": "java LanguageModelTester calculateProbabilities",
+      "input": "",
+      "output": "Test calculateProbabilities result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Test getRandomChar Method",
+      "setup": "javac LanguageModelTester.java",
+      "run": "java LanguageModelTester getRandomChar",
+      "input": "",
+      "output": "Test getRandomChar result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "Test Train Method",
+      "setup": "javac LanguageModelTester.java",
+      "run": "java LanguageModelTester train",
+      "input": "",
+      "output": "Test train result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 20
+    },
+    {
+      "name": "Test Generate Method",
+      "setup": "javac LanguageModelTester.java",
+      "run": "java LanguageModelTester generate",
+      "input": "",
+      "output": "Test generate result: PASSED",
+      "comparison": "exact",
+      "timeout": 10,
+      "points": 20
+    }
+   
+    
+
+  ]
+}
