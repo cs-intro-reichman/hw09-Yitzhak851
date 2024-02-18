@@ -1,23 +1,26 @@
-/** Represents an iterator over a list of CharData objects. */
-public class ListIterator {
+/**
+ * This class represents an iterator over a list of CharData objects.
+ * it can be used to traverse the list and access its elements.
+ */
 
-    // Current position in the list (cursor)
-    Node current;
+public class ListIterator {
+    Node current; // cursor on current position in the list
 
     /** Constructs a list iterator, starting at the given node. */
     public ListIterator(Node node) {
-        // Sets the cursor of this iterator to the given node
-        current = node;
+        current = node; // Sets the cursor of this iterator to the given node
     }
 
-    /** Checks if this iterator has more nodes to process */
+    /** Iterator that checks if has more nodes to process */
     public boolean hasNext() {
-        return (current != null);
+        return (current != null); // if the cursor is not null returns true
     }
-  
-    /** Returns the CharData object of the current element in this iteration,
-     *  and advances the cursor to the next element.
-     *  Should be called only if hasNext() is true. */
+
+    /**
+     * Returns the CharData object of the current element in this iteration,
+     * and advances the cursor to the next element.
+     * Should be called only if hasNext() is true.
+     */
     public CharData next() {
         CharData cd = current.cd;
         current = current.next;

@@ -162,7 +162,6 @@ public class ListTest {
         return yourSolution.get(index).equals(sol.charAt(index));
     }
 
-
     public static boolean testUpdate () {
         boolean result = true;
         String [] testWords = {"commitee_","Hello_World", "Java_", "linked_lists_are_fun", "lexicographic_order"};
@@ -256,6 +255,5 @@ public class ListTest {
         }
         return true;
     }
-    
 
 }
