@@ -210,7 +210,18 @@ public class List {
 
     /** GIVE Textual representation of this list. */
     public String toString() {
-        return "List: {first: " + first + ", size: " + size + '}';
+        // If the list is empty, returns an empty string
+        if (size == 0)
+            return "";
+        // Builds a string representation of this list
+        StringBuilder sb = new StringBuilder();
+        Node current = first;
+        while (current != null) {
+            sb.append(current.cd.toString());
+            current = current.next;
+        }
+        return sb.toString();
+        // return null;
     }
 
 }
