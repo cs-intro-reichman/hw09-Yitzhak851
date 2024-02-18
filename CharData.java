@@ -29,6 +29,6 @@ public class CharData {
 
 	/** Returns a textual representation of this CharData object. */
 	public String toString() {
-		return "( " + chr + " " + count + " " + p + " " + cp + ")";
+		return "(" + chr + " " + count + " " + p + " " + cp + ")";
 	}
 }
