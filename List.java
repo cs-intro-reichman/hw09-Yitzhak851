@@ -210,10 +210,9 @@ public class List {
 
     /** GIVE Textual representation of this list. */
     public String toString() {
-        // If the list is empty, returns an empty string
-        if (size == 0)
+        if (size == 0) {
             return "";
-        // Builds a string representation of this list
+        }
         StringBuilder sb = new StringBuilder();
         Node current = first;
         while (current != null) {
@@ -221,7 +220,6 @@ public class List {
             current = current.next;
         }
         return sb.toString();
-        // return null;
     }
 
 }

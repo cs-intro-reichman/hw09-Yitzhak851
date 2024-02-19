@@ -2,7 +2,16 @@
 import java.util.Random;
 
 public class AppTest {
+
     public static void main(String[] args) {
+        List l1 = new List();
+        
+
+        //AppTest app = new AppTest();
+        //app.fofo();
+    }
+
+    public void fofo() {
         System.out
                 .println("===============================\n      Testing the classes\n===============================");
         // CharData
@@ -130,9 +139,9 @@ public class AppTest {
         // // Create a language model object with the given window length.
         // LanguageModel lm;
         // if (randomGeneration)
-        //     lm = new LanguageModel(windowLength);
+        // lm = new LanguageModel(windowLength);
         // else
-        //     lm = new LanguageModel(windowLength, 20);
+        // lm = new LanguageModel(windowLength, 20);
         // // Train the language model with the given file.
         // lm.train(fileName);
         // // Generate a random text using the language model and print it.
