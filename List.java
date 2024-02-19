@@ -62,34 +62,23 @@ public class List {
      * given chr to the beginning of this list.
      */
     public void update(char chr) {
-        // if the list is empty, adds a new CharData object with the given chr to the
-        // beginning of this list
         if (size == 0) {
             addFirst(chr);
             return;
         }
-        // if the given character exists in one of the CharData objects in this list,
-        // increments its counter
         Node current = first;
         while (current != null) {
-            // if the current node contains the given character, increments its counter and
-            // returns
             if (current.cd.equals(chr)) {
-                // increments the counter of the current node
                 current.cd.count++;
-                // returns
-                return;
+                break;
             }
-            // moves to the next node
             current = current.next;
         }
-        // if the given character does not exist in one of the CharData objects in this
-        // list, adds a new CharData object with the given chr to the beginning of this
-        // list
-        addFirst(chr);
-        // updates the probability fields of all the CharData objects in this list
+        if (current == null){
+            addFirst(chr);
+        }
         updateProbabilities();
-
+        
     }
 
     // updates the probability fields of all the CharData objects in this list
@@ -120,38 +109,24 @@ public class List {
      * nothing.
      */
     public boolean remove(char chr) {
-        // if the list is empty, there is nothing to remove
         if (size == 0) {
-            // returns
             return false;
         }
-        // if the given character exists in one of the CharData objects in this list,
-        // removes this CharData object from the list
         if (first.cd.equals(chr)) {
             first = first.next;
             size--;
-            // returns
             return true;
         }
-        // if the given character does not exist in one of the CharData objects in this
-        // list, there is nothing to remove
         Node current = first;
         while (current.next != null) {
-            // if the next node contains the given character, removes it from the list
             if (current.next.cd.equals(chr)) {
-                // removes the next node from the list
                 current.next = current.next.next;
-                // updates the size of this list
                 size--;
-                // returns
                 return true;
             }
-            // moves to the next node
             current = current.next;
         }
-        // updates the probability fields of all the CharData objects in this list
         updateProbabilities();
-        // returns
         return false;
     }
 
@@ -161,7 +136,6 @@ public class List {
      * throws an IndexOutOfBoundsException.
      */
     public CharData get(int index) {
-        // Your code goes here
         if (index < 0 || index >= size)
             throw new IndexOutOfBoundsException();
         Node current = first;
@@ -171,7 +145,6 @@ public class List {
             i++;
         }
         return current.cd;
-        // return null;
     }
 
     /**
@@ -194,17 +167,14 @@ public class List {
      * index.
      */
     public ListIterator listIterator(int index) {
-        // If the list is empty, there is nothing to iterate
         if (size == 0)
             return null;
-        // Gets the element in position index of this list
         Node current = first;
         int i = 0;
         while (i < index) {
             current = current.next;
             i++;
         }
-        // Returns an iterator that starts in that element
         return new ListIterator(current);
     }
 
