@@ -4,11 +4,32 @@ import java.util.Random;
 public class AppTest {
 
     public static void main(String[] args) {
-        List l1 = new List();
-        
+        // test toString
+        String testWords = "word";
+        String solutions = "((w 1 0.0 0.0) (o 1 0.0 0.0) (r 1 0.0 0.0) (d 1 0.0 0.0))";
+        System.out.println("command: testToString();\noutput: " + testToString(testWords, solutions));
+        // print mySolution
+        List mySolution = new List();
+        for (int i = 0; i < testWords.length(); i++) {
+            mySolution.addFirst(testWords.charAt(testWords.length() - 1 - i));
+        }
+        // print mySolution.toString()
+        System.out.println("command: mySolution.toString();\noutput: " + mySolution.toString()); // ((w 1 0.0 0.0) (o 1
+                                                                                                 // 0.0 0.0) (r 1 0.0
+                                                                                                 // 0.0) (d 1 0.0 0.0))
+        // print solutions
+        System.out.println("command: solutions;\noutput: " + solutions); // ((w 1 0.0 0.0) (o 1 0.0 0.0) (r 1 0.0 0.0)
+                                                                        // (d 1 0.0 0.0))
+        // AppTest app = new AppTest();
+        // app.fofo();
+    }
 
-        //AppTest app = new AppTest();
-        //app.fofo();
+    public static boolean testToString(String word, String solution) {
+        List mySolution = new List();
+        for (int i = 0; i < word.length(); i++) {
+            mySolution.addFirst(word.charAt(word.length() - 1 - i));
+        }
+        return mySolution.toString().equals(solution);
     }
 
     public void fofo() {

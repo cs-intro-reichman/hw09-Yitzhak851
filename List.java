@@ -210,16 +210,16 @@ public class List {
 
     /** GIVE Textual representation of this list. */
     public String toString() {
-        if (size == 0) {
-            return "";
-        }
-        StringBuilder sb = new StringBuilder();
+        String str = "(";
         Node current = first;
         while (current != null) {
-            sb.append(current.cd.toString());
+            str += current.cd.toString();
             current = current.next;
+            if (current != null)
+                str += " ";
         }
-        return sb.toString();
+        str += ")";
+        return str;
     }
 
 }
