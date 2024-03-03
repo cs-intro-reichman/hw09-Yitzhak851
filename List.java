@@ -19,25 +19,29 @@ public class List {
         return first.cd;
     }
 
-    /** Returns index of the first CharData object in this list */
-    // that has the same chr value as the given char,
-    // * or -1 if there is no such object in this list.
-    // */
+    /**
+     * Returns index of the first CharData object in this list
+     * that has the same chr value as the given char,
+     * or -1 if there is no such object in this list.
+     */
     public int indexOf(char chr) {
         Node current = first;
         int i = 0;
         while (current != null) {
-            if (current.cd.equals(chr))
+            if (current.cd.equals(chr)) {
                 return i;
+            }
             current = current.next;
             i++;
         }
-        return -1;
+        return -1; // not found
     }
 
     /** addFirst CharData object with the given character to beginning list. */
     public void addFirst(char chr) {
-        first = new Node(new CharData(chr), first);
+        Node newNode = new Node(new CharData(chr));
+        newNode.next = first;
+        first = newNode;
         size++;
     }
 
@@ -62,44 +66,11 @@ public class List {
      * given chr to the beginning of this list.
      */
     public void update(char chr) {
-        if (size == 0) {
+        int i = indexOf(chr);
+        if (i >= 0) {
+            this.get(i).count++;
+        } else {
             addFirst(chr);
-            return;
-        }
-        Node current = first;
-        while (current != null) {
-            if (current.cd.equals(chr)) {
-                current.cd.count++;
-                break;
-            }
-            current = current.next;
-        }
-        if (current == null){
-            addFirst(chr);
-        }
-        updateProbabilities();
-        
-    }
-
-    // updates the probability fields of all the CharData objects in this list
-    public void updateProbabilities() {
-        Node current = first;
-        int total = 0;
-        while (current != null) {
-            total += current.cd.count;
-            current = current.next;
-        }
-        current = first;
-        while (current != null) {
-            current.cd.p = (double) current.cd.count / total;
-            current = current.next;
-        }
-        current = first;
-        double cp = 0;
-        while (current != null) {
-            cp += current.cd.p;
-            current.cd.cp = cp;
-            current = current.next;
         }
     }
 
@@ -109,25 +80,22 @@ public class List {
      * nothing.
      */
     public boolean remove(char chr) {
-        if (size == 0) {
+        Node currNode = first;
+        Node prevNode = null;
+        while (currNode != null && !currNode.cd.equals(chr)) {
+            prevNode = currNode;
+            currNode = currNode.next;
+        }
+        if (currNode == null) {
             return false;
         }
-        if (first.cd.equals(chr)) {
+        if (prevNode == null) {
             first = first.next;
-            size--;
-            return true;
+        } else {
+            prevNode.next = currNode.next;
         }
-        Node current = first;
-        while (current.next != null) {
-            if (current.next.cd.equals(chr)) {
-                current.next = current.next.next;
-                size--;
-                return true;
-            }
-            current = current.next;
-        }
-        updateProbabilities();
-        return false;
+        size--;
+        return true;
     }
 
     /**
@@ -167,8 +135,9 @@ public class List {
      * index.
      */
     public ListIterator listIterator(int index) {
-        if (size == 0)
+        if (size == 0){
             return null;
+        }
         Node current = first;
         int i = 0;
         while (i < index) {

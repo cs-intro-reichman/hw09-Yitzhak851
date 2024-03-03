@@ -7,6 +7,7 @@
 public class Node {
    CharData cd; // a pointer to a CharData object
    Node next; // pointer to another node in the list (null if there is no such node)
+   // pointer to the previous node in the list (null if there is no such node)
 
    /**
     * Constructs a node with the given CharData object.
@@ -23,6 +24,15 @@ public class Node {
     */
    public Node(CharData cd) {
       this(cd, null);
+   }
+
+   // method to get the last node in the list
+   public Node getLastNode(List list, Node first) {
+      Node current = list.first;
+      while (current.next != null) {
+         current = current.next;
+      }
+      return current;
    }
 
    /** Textual representation of this node. */
